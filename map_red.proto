@@ -1,0 +1,10 @@
+syntax="proto3";
+
+service Kmeans{
+    rpc MastertoMapper(MastertoMapperRequest) returns MastertoMapperResponse{}
+
+    rpc MappertoReducer(MappertoReducerRequest) returns MappertoReducerResponse{}
+
+    rpc ReducertoMapper(ReducertoMapperRequest) returns ReducertoMapperResponse{}
+}
+

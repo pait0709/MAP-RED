@@ -49,7 +49,7 @@ class KmeansServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReducertoMapper(self, request, context):
-        """reducer requests the partitioned files recieves files and status, Reducer is client, mapper is server
+        """reducer requests and also sends its reducer number the partitioned files recieves files and status, Reducer is client, mapper is server
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

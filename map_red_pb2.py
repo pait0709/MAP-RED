@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rmap_red.proto\";\n\x15MastertoMapperRequest\x12\x0f\n\x07indexes\x18\x01 \x03(\x05\x12\x11\n\tcentroids\x18\x02 \x03(\x02\"(\n\x16MastertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"*\n\x16MastertoReducerRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\"<\n\x17MastertoReducerResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x11\n\tcentroids\x18\x02 \x03(\t\"*\n\x16ReducertoMapperRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\"9\n\x17ReducertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x0e\n\x06output\x18\x02 \x03(\t2\xd7\x01\n\x06Kmeans\x12\x41\n\x0eMastertoMapper\x12\x16.MastertoMapperRequest\x1a\x17.MastertoMapperResponse\x12\x44\n\x0fMastertoReducer\x12\x17.MastertoReducerRequest\x1a\x18.MastertoReducerResponse\x12\x44\n\x0fReducertoMapper\x12\x17.ReducertoMapperRequest\x1a\x18.ReducertoMapperResponseb\x06proto3'
+  serialized_pb=b'\n\rmap_red.proto\";\n\x15MastertoMapperRequest\x12\x0f\n\x07indexes\x18\x01 \x03(\x05\x12\x11\n\tcentroids\x18\x02 \x03(\x02\"(\n\x16MastertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"*\n\x16MastertoReducerRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\"<\n\x17MastertoReducerResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x11\n\tcentroids\x18\x02 \x03(\t\"B\n\x16ReducertoMapperRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\x12\x16\n\x0ereducer_number\x18\x02 \x01(\x05\"9\n\x17ReducertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x0e\n\x06output\x18\x02 \x03(\t2\xd7\x01\n\x06Kmeans\x12\x41\n\x0eMastertoMapper\x12\x16.MastertoMapperRequest\x1a\x17.MastertoMapperResponse\x12\x44\n\x0fMastertoReducer\x12\x17.MastertoReducerRequest\x1a\x18.MastertoReducerResponse\x12\x44\n\x0fReducertoMapper\x12\x17.ReducertoMapperRequest\x1a\x18.ReducertoMapperResponseb\x06proto3'
 )
 
 
@@ -182,6 +182,13 @@ _REDUCERTOMAPPERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reducer_number', full_name='ReducertoMapperRequest.reducer_number', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -195,7 +202,7 @@ _REDUCERTOMAPPERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=226,
-  serialized_end=268,
+  serialized_end=292,
 )
 
 
@@ -233,8 +240,8 @@ _REDUCERTOMAPPERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=327,
+  serialized_start=294,
+  serialized_end=351,
 )
 
 DESCRIPTOR.message_types_by_name['MastertoMapperRequest'] = _MASTERTOMAPPERREQUEST
@@ -296,8 +303,8 @@ _KMEANS = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=330,
-  serialized_end=545,
+  serialized_start=354,
+  serialized_end=569,
   methods=[
   _descriptor.MethodDescriptor(
     name='MastertoMapper',

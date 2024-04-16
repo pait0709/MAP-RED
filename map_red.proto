@@ -8,7 +8,7 @@ service Kmeans{
     //master gives the go-ahead to reduce and master recieves status and centroids, Reducer is server, master is client
     rpc MastertoReducer(MastertoReducerRequest) returns (MastertoReducerResponse);
 
-    //reducer requests the partitioned files recieves files and status, Reducer is client, mapper is server
+    //reducer requests and also sends its reducer number the partitioned files recieves files and status, Reducer is client, mapper is server
     rpc ReducertoMapper(ReducertoMapperRequest) returns (ReducertoMapperResponse);
 }
 
@@ -33,6 +33,7 @@ message MastertoReducerResponse{
 
 message ReducertoMapperRequest{
     int32 go_ahead=1;
+    int32 reducer_number=2;
 }
 
 message ReducertoMapperResponse{

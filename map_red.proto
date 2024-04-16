@@ -1,10 +1,52 @@
 syntax="proto3";
 
 service Kmeans{
-    rpc MastertoMapper(MastertoMapperRequest) returns MastertoMapperResponse{}
+    
+    //master assigns indexes and gives centroids recieves status, Mapper is server, master is client
+    rpc MastertoMapper(MastertoMapperRequest) returns (MastertoMapperResponse);
 
-    rpc MappertoReducer(MappertoReducerRequest) returns MappertoReducerResponse{}
+    //master gives the go-ahead to reduce recieves status and centroids, Reducer is server, master is client
+    rpc MastertoReducer(MastertoReducerRequest) returns (MastertoReducerResponse);
 
-    rpc ReducertoMapper(ReducertoMapperRequest) returns ReducertoMapperResponse{}
+    //reducer requests the partitioned files recieves files and status, Reducer is client, mapper is server
+    rpc ReducertoMapper(ReducertoMapperRequest) returns (ReducertoMapperResponse);
 }
 
+message MastertoMapperRequest{
+    int32 num_of_mappers = 1;
+    int32 num_of_reducers = 2;
+    int32 num_of_iterations = 3;
+    int32 num_of_clusters = 4;
+    string file_path = 5;
+}
+
+message MastertoMapperResponse{
+    string status = 1;
+    repeated string centroids = 2;
+}
+
+message MastertoReducerRequest{
+    int32 num_of_mappers = 1;
+    int32 num_of_reducers = 2;
+    int32 num_of_iterations = 3;
+    int32 num_of_clusters = 4;
+    repeated string centroids = 5;
+}
+
+message MastertoReducerResponse{
+    string status = 1;
+    repeated string centroids = 2;
+}
+
+message ReducertoMapperRequest{
+    int32 reducer_id = 1;
+    int32 num_of_mappers = 2;
+    int32 num_of_reducers = 3;
+    int32 num_of_clusters = 4;
+    string file_path = 5;
+}
+
+message ReducertoMapperResponse{
+    string status = 1;
+    repeated string files = 2;
+}

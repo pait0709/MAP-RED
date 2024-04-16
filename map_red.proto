@@ -5,7 +5,7 @@ service Kmeans{
     //master assigns indexes and gives centroids recieves status, Mapper is server, master is client
     rpc MastertoMapper(MastertoMapperRequest) returns (MastertoMapperResponse);
 
-    //master gives the go-ahead to reduce recieves status and centroids, Reducer is server, master is client
+    //master gives the go-ahead to reduce and master recieves status and centroids, Reducer is server, master is client
     rpc MastertoReducer(MastertoReducerRequest) returns (MastertoReducerResponse);
 
     //reducer requests the partitioned files recieves files and status, Reducer is client, mapper is server
@@ -13,24 +13,17 @@ service Kmeans{
 }
 
 message MastertoMapperRequest{
-    int32 num_of_mappers = 1;
-    int32 num_of_reducers = 2;
-    int32 num_of_iterations = 3;
-    int32 num_of_clusters = 4;
-    string file_path = 5;
+    repeated int32 indexes=1;
+    repeated float centroids=2;
+    
 }
 
 message MastertoMapperResponse{
-    string status = 1;
-    repeated string centroids = 2;
+    int32 status = 1;
 }
 
 message MastertoReducerRequest{
-    int32 num_of_mappers = 1;
-    int32 num_of_reducers = 2;
-    int32 num_of_iterations = 3;
-    int32 num_of_clusters = 4;
-    repeated string centroids = 5;
+    int32 go_ahead=1;
 }
 
 message MastertoReducerResponse{
@@ -39,14 +32,10 @@ message MastertoReducerResponse{
 }
 
 message ReducertoMapperRequest{
-    int32 reducer_id = 1;
-    int32 num_of_mappers = 2;
-    int32 num_of_reducers = 3;
-    int32 num_of_clusters = 4;
-    string file_path = 5;
+    int32 go_ahead=1;
 }
 
 message ReducertoMapperResponse{
     string status = 1;
-    repeated string files = 2;
+    repeated string output = 2;
 }

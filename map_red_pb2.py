@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rmap_red.proto\"\x8f\x01\n\x15MastertoMapperRequest\x12\x16\n\x0enum_of_mappers\x18\x01 \x01(\x05\x12\x17\n\x0fnum_of_reducers\x18\x02 \x01(\x05\x12\x19\n\x11num_of_iterations\x18\x03 \x01(\x05\x12\x17\n\x0fnum_of_clusters\x18\x04 \x01(\x05\x12\x11\n\tfile_path\x18\x05 \x01(\t\";\n\x16MastertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x11\n\tcentroids\x18\x02 \x03(\t\"\x90\x01\n\x16MastertoReducerRequest\x12\x16\n\x0enum_of_mappers\x18\x01 \x01(\x05\x12\x17\n\x0fnum_of_reducers\x18\x02 \x01(\x05\x12\x19\n\x11num_of_iterations\x18\x03 \x01(\x05\x12\x17\n\x0fnum_of_clusters\x18\x04 \x01(\x05\x12\x11\n\tcentroids\x18\x05 \x03(\t\"<\n\x17MastertoReducerResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x11\n\tcentroids\x18\x02 \x03(\t\"\x89\x01\n\x16ReducertoMapperRequest\x12\x12\n\nreducer_id\x18\x01 \x01(\x05\x12\x16\n\x0enum_of_mappers\x18\x02 \x01(\x05\x12\x17\n\x0fnum_of_reducers\x18\x03 \x01(\x05\x12\x17\n\x0fnum_of_clusters\x18\x04 \x01(\x05\x12\x11\n\tfile_path\x18\x05 \x01(\t\"8\n\x17ReducertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\r\n\x05\x66iles\x18\x02 \x03(\t2\xd7\x01\n\x06Kmeans\x12\x41\n\x0eMastertoMapper\x12\x16.MastertoMapperRequest\x1a\x17.MastertoMapperResponse\x12\x44\n\x0fMastertoReducer\x12\x17.MastertoReducerRequest\x1a\x18.MastertoReducerResponse\x12\x44\n\x0fReducertoMapper\x12\x17.ReducertoMapperRequest\x1a\x18.ReducertoMapperResponseb\x06proto3'
+  serialized_pb=b'\n\rmap_red.proto\";\n\x15MastertoMapperRequest\x12\x0f\n\x07indexes\x18\x01 \x03(\x05\x12\x11\n\tcentroids\x18\x02 \x03(\x02\"(\n\x16MastertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"*\n\x16MastertoReducerRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\"<\n\x17MastertoReducerResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x11\n\tcentroids\x18\x02 \x03(\t\"*\n\x16ReducertoMapperRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\"9\n\x17ReducertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x0e\n\x06output\x18\x02 \x03(\t2\xd7\x01\n\x06Kmeans\x12\x41\n\x0eMastertoMapper\x12\x16.MastertoMapperRequest\x1a\x17.MastertoMapperResponse\x12\x44\n\x0fMastertoReducer\x12\x17.MastertoReducerRequest\x1a\x18.MastertoReducerResponse\x12\x44\n\x0fReducertoMapper\x12\x17.ReducertoMapperRequest\x1a\x18.ReducertoMapperResponseb\x06proto3'
 )
 
 
@@ -34,37 +34,16 @@ _MASTERTOMAPPERREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='num_of_mappers', full_name='MastertoMapperRequest.num_of_mappers', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='indexes', full_name='MastertoMapperRequest.indexes', index=0,
+      number=1, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='num_of_reducers', full_name='MastertoMapperRequest.num_of_reducers', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_iterations', full_name='MastertoMapperRequest.num_of_iterations', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_clusters', full_name='MastertoMapperRequest.num_of_clusters', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='file_path', full_name='MastertoMapperRequest.file_path', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='centroids', full_name='MastertoMapperRequest.centroids', index=1,
+      number=2, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -80,8 +59,8 @@ _MASTERTOMAPPERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18,
-  serialized_end=161,
+  serialized_start=17,
+  serialized_end=76,
 )
 
 
@@ -95,15 +74,8 @@ _MASTERTOMAPPERRESPONSE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='status', full_name='MastertoMapperResponse.status', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='centroids', full_name='MastertoMapperResponse.centroids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -119,8 +91,8 @@ _MASTERTOMAPPERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=163,
-  serialized_end=222,
+  serialized_start=78,
+  serialized_end=118,
 )
 
 
@@ -133,37 +105,9 @@ _MASTERTOREDUCERREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='num_of_mappers', full_name='MastertoReducerRequest.num_of_mappers', index=0,
+      name='go_ahead', full_name='MastertoReducerRequest.go_ahead', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_reducers', full_name='MastertoReducerRequest.num_of_reducers', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_iterations', full_name='MastertoReducerRequest.num_of_iterations', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_clusters', full_name='MastertoReducerRequest.num_of_clusters', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='centroids', full_name='MastertoReducerRequest.centroids', index=4,
-      number=5, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -179,8 +123,8 @@ _MASTERTOREDUCERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=225,
-  serialized_end=369,
+  serialized_start=120,
+  serialized_end=162,
 )
 
 
@@ -218,8 +162,8 @@ _MASTERTOREDUCERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=431,
+  serialized_start=164,
+  serialized_end=224,
 )
 
 
@@ -232,37 +176,9 @@ _REDUCERTOMAPPERREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reducer_id', full_name='ReducertoMapperRequest.reducer_id', index=0,
+      name='go_ahead', full_name='ReducertoMapperRequest.go_ahead', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_mappers', full_name='ReducertoMapperRequest.num_of_mappers', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_reducers', full_name='ReducertoMapperRequest.num_of_reducers', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='num_of_clusters', full_name='ReducertoMapperRequest.num_of_clusters', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='file_path', full_name='ReducertoMapperRequest.file_path', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -278,8 +194,8 @@ _REDUCERTOMAPPERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=434,
-  serialized_end=571,
+  serialized_start=226,
+  serialized_end=268,
 )
 
 
@@ -299,7 +215,7 @@ _REDUCERTOMAPPERRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='files', full_name='ReducertoMapperResponse.files', index=1,
+      name='output', full_name='ReducertoMapperResponse.output', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -317,8 +233,8 @@ _REDUCERTOMAPPERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=573,
-  serialized_end=629,
+  serialized_start=270,
+  serialized_end=327,
 )
 
 DESCRIPTOR.message_types_by_name['MastertoMapperRequest'] = _MASTERTOMAPPERREQUEST
@@ -380,8 +296,8 @@ _KMEANS = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=632,
-  serialized_end=847,
+  serialized_start=330,
+  serialized_end=545,
   methods=[
   _descriptor.MethodDescriptor(
     name='MastertoMapper',

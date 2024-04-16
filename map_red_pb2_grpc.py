@@ -42,7 +42,7 @@ class KmeansServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def MastertoReducer(self, request, context):
-        """master gives the go-ahead to reduce recieves status and centroids, Reducer is server, master is client
+        """master gives the go-ahead to reduce and master recieves status and centroids, Reducer is server, master is client
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

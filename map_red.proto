@@ -27,16 +27,15 @@ message MastertoReducerRequest{
 }
 
 message MastertoReducerResponse{
-    string status = 1;
+    int32 status = 1;
     repeated string centroids = 2;
 }
 
 message ReducertoMapperRequest{
-    int32 go_ahead=1;
-    int32 reducer_number=2;
+    int32 reducer_number=1;
 }
 
 message ReducertoMapperResponse{
-    string status = 1;
+    int32 status = 1;
     repeated string output = 2;
 }

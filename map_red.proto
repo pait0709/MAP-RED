@@ -1,5 +1,7 @@
 syntax="proto3";
 
+//python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. map_red.proto
+
 service Kmeans{
     
     //master assigns indexes and gives centroids recieves status, Mapper is server, master is client
@@ -14,7 +16,7 @@ service Kmeans{
 
 message MastertoMapperRequest{
     repeated int32 indexes=1;
-    repeated float centroids=2;
+    repeated string centroids=2;
     
 }
 

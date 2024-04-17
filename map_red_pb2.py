@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rmap_red.proto\";\n\x15MastertoMapperRequest\x12\x0f\n\x07indexes\x18\x01 \x03(\x05\x12\x11\n\tcentroids\x18\x02 \x03(\x02\"(\n\x16MastertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"*\n\x16MastertoReducerRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\"<\n\x17MastertoReducerResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x11\n\tcentroids\x18\x02 \x03(\t\"0\n\x16ReducertoMapperRequest\x12\x16\n\x0ereducer_number\x18\x01 \x01(\x05\"9\n\x17ReducertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0e\n\x06output\x18\x02 \x03(\t2\xd7\x01\n\x06Kmeans\x12\x41\n\x0eMastertoMapper\x12\x16.MastertoMapperRequest\x1a\x17.MastertoMapperResponse\x12\x44\n\x0fMastertoReducer\x12\x17.MastertoReducerRequest\x1a\x18.MastertoReducerResponse\x12\x44\n\x0fReducertoMapper\x12\x17.ReducertoMapperRequest\x1a\x18.ReducertoMapperResponseb\x06proto3'
+  serialized_pb=b'\n\rmap_red.proto\";\n\x15MastertoMapperRequest\x12\x0f\n\x07indexes\x18\x01 \x03(\x05\x12\x11\n\tcentroids\x18\x02 \x03(\t\"(\n\x16MastertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"*\n\x16MastertoReducerRequest\x12\x10\n\x08go_ahead\x18\x01 \x01(\x05\"<\n\x17MastertoReducerResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x11\n\tcentroids\x18\x02 \x03(\t\"0\n\x16ReducertoMapperRequest\x12\x16\n\x0ereducer_number\x18\x01 \x01(\x05\"9\n\x17ReducertoMapperResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0e\n\x06output\x18\x02 \x03(\t2\xd7\x01\n\x06Kmeans\x12\x41\n\x0eMastertoMapper\x12\x16.MastertoMapperRequest\x1a\x17.MastertoMapperResponse\x12\x44\n\x0fMastertoReducer\x12\x17.MastertoReducerRequest\x1a\x18.MastertoReducerResponse\x12\x44\n\x0fReducertoMapper\x12\x17.ReducertoMapperRequest\x1a\x18.ReducertoMapperResponseb\x06proto3'
 )
 
 
@@ -42,7 +42,7 @@ _MASTERTOMAPPERREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='centroids', full_name='MastertoMapperRequest.centroids', index=1,
-      number=2, type=2, cpp_type=6, label=3,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

@@ -5,35 +5,43 @@ import grpc
 import map_red_pb2
 import map_red_pb2_grpc
 import threading
+import os
 reducer_output=[]
 mapper_output=[]
 reducer_centroids=[]
 host='localhost:'
 def mapper_call(port_address,shard_data,centroids):
     with grpc.insecure_channel(host+str(port_address)) as channel:
-        stub=map_red_pb2_grpc.KmeansStub(channel)
-        str_centroids=[]
-        for i in range(len(centroids)):
-            str_centroids.append(str(centroids[i][0])+" "+str(centroids[i][1]))
-        request=map_red_pb2.MastertoMapperRequest(indexes=shard_data,centroids=str_centroids)
-        response=stub.MastertoMapper(request)
-        mapper_output.append(response.status)
+        try:
+            stub=map_red_pb2_grpc.KmeansStub(channel)
+            str_centroids=[]
+            for i in range(len(centroids)):
+                str_centroids.append(str(centroids[i][0])+" "+str(centroids[i][1]))
+            request=map_red_pb2.MastertoMapperRequest(indexes=shard_data,centroids=str_centroids)
+            response=stub.MastertoMapper(request)
+            mapper_output.append(response.status)
+        except grpc.RpcError as e:
+            pass
 
 def reducer_call(port_address,centroids):
     with grpc.insecure_channel(host+str(port_address)) as channel:
-        str_centroids=[]
-        for i in range(len(centroids)):
-            str_centroids.append(str(centroids[i][0])+" "+str(centroids[i][1]))
-        print('inside reducer call')
-        stub=map_red_pb2_grpc.KmeansStub(channel)
-        request=map_red_pb2.MastertoReducerRequest(go_ahead=1,centroids=str_centroids)
-        response=stub.MastertoReducer(request)
-        reducer_output.append(response.status)
-        reducer_centroids.append(response.centroids)
+        try:
+            str_centroids=[]
+            for i in range(len(centroids)):
+                str_centroids.append(str(centroids[i][0])+" "+str(centroids[i][1]))
+            stub=map_red_pb2_grpc.KmeansStub(channel)
+            request=map_red_pb2.MastertoReducerRequest(go_ahead=1,centroids=str_centroids)
+            response=stub.MastertoReducer(request)
+            reducer_output.append(response.status)
+            reducer_centroids.append(response.centroids)
+        except grpc.RpcError as e:
+            pass
 
 if __name__=="__main__":
-    #when master takes input
-    #initialise the relevant number of child programs and assign address space
+    os.makedirs('Mappers',exist_ok=True)
+    os.makedirs('Reducers',exist_ok=True)
+    with open('dump.txt','w') as f:
+        f.write("Starting Master\n")
     num_mappers=int(input("Number of mappers: "))
     num_reducers=int(input("Num reducers: "))
     num_centroids=int(input("Num centroids: "))
@@ -64,7 +72,7 @@ if __name__=="__main__":
         command=["./run_reducer.sh","reducer.py",port_num,str(num_mappers),str(i+1)]
         subprocess.Popen(command)
 
-    with open('points.txt','r') as f:
+    with open('Input/points.txt','r') as f:
         l=f.readlines()
     for i in range(len(l)):
         l[i]=l[i].strip('\n')
@@ -90,6 +98,10 @@ if __name__=="__main__":
     is_start=True
     j=0
     while j<num_iters:
+        print("iteration: ",j+1)
+        with open('dump.txt','a') as f:
+            f.write(f"iteration {j}\n")
+
 
         threads_mapper=[]
         threads_reducer=[]
@@ -101,7 +113,8 @@ if __name__=="__main__":
         for t in threads_mapper:
             t.join()
         if sum(mapper_output)==num_mappers:
-            print("NIGGA")
+            with open('dump.txt','a') as f:
+                f.write("Mapper Sucess\n") 
             for i in range(num_reducers):
                 thread=threading.Thread(target=reducer_call,args=(reducers[i+1],centorids))
                 thread.start()
@@ -109,6 +122,8 @@ if __name__=="__main__":
             for t in threads_reducer:
                 t.join()
             if(sum(reducer_output)==num_reducers):
+                with open('dump.txt','a') as f:
+                    f.write("Reducer Sucess\n") 
                 #implementing master side
                 
                 for p in reducer_centroids:
@@ -117,24 +132,34 @@ if __name__=="__main__":
                         index=int(points[0])
                         X1=float(points[1])
                         Y1=float(points[2])
-                        centorids[index]=[X1,Y1]
-                print(f"Centroids for iteration {j+1}:")
+                        try:
+                            centorids[index]=[X1,Y1]
+                        except:
+                            continue
+               #print(f"Centroids for iteration {j+1}:")
                 with open('centroids.txt','w')as f:
                     for i in range(len(centorids)):
                         f.write(f"{i+1} {centorids[i][0]} {centorids[i][1]}\n")
                         print(f"{i+1} {centorids[i][0]} {centorids[i][1]}\n")
                 j+=1
             else:
-                j+=1
-                print("Reducer Failure, Retrying")       
+                #print("Reducer Failure, Retrying")   
+                with open('dump.txt','a') as f: 
+                    f.write("Reducer Failure Occured ,Retrying\n")
+
+
+
             reducer_output=[]
             reducer_centroids=[]
             mapper_output=[]
         else:
-            j+=1
-            print("Mapper Failure Retrying")
+            #print("Mapper Failure Retrying")
+            with open("dump.txt",'a') as f:
+                f.write("Mapper Failure Occured,Retrying\n")
+
             reducer_output=[]
             mapper_output=[]
             reducer_centroids=[]
             continue
+    print("completed please check")
                     

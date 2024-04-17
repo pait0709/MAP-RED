@@ -5,7 +5,9 @@ import map_red_pb2_grpc
 from concurrent import futures
 import sys
 import threading
+import random
 
+import time
 class Reducer(map_red_pb2_grpc.KmeansServicer):
     def __init__(self, mappers,reducer_number):
         self.mappers=mappers
@@ -17,17 +19,18 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
     def mapper_call(self,port):
         host='localhost:'
         with grpc.insecure_channel(host+str(port)) as channel:
-            stub=map_red_pb2_grpc.KmeansStub(channel)
-            request=map_red_pb2.ReducertoMapperRequest(reducer_number=self.reducer_number)
-            response=stub.ReducertoMapper(request)
-            if(response.status==1): 
-                if(len(response.output)!=0):
-                    for x in response.output:
-                        self.partitioned_files.append(x)
-                print("mapper call cool")
-            else:
-                print("mapper call failed")
-                self.partitioned_files.append("-1")
+            try:
+                stub=map_red_pb2_grpc.KmeansStub(channel)
+                request=map_red_pb2.ReducertoMapperRequest(reducer_number=self.reducer_number)
+                response=stub.ReducertoMapper(request)
+                if(response.status==1): 
+                    if(len(response.output)!=0):
+                        for x in response.output:
+                            self.partitioned_files.append(x)
+                else:
+                    self.partitioned_files.append("-1")
+            except grpc.RpcError as e:
+                pass
     
     def shuffle_sort(self):
         for x in self.partitioned_files:
@@ -44,6 +47,7 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
         return True
     
     def reduce(self):
+        
         ans=[]
         for key, value in self.shuflled_sorted.items():
             avg_X1=0
@@ -54,16 +58,15 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
             avg_X1/=len(value)
             avg_Y1/=len(value)
             ans.append(f'{key} {avg_X1:.2f} {avg_Y1:.2f}')
-        with open(f"R{self.reducer_number}.txt",'w') as f:
+        with open(f"Reducers/R{self.reducer_number}.txt",'w') as f:
             for i in ans:
                 f.write(i+"\n")
         return ans
 
     def startserver(self,port):
-        server=grpc.server(futures.ThreadPoolExecutor(max_workers=100))
+        server=grpc.server(futures.ThreadPoolExecutor(max_workers=10000))
         map_red_pb2_grpc.add_KmeansServicer_to_server(self,server)
         server.add_insecure_port(f'localhost:{port}')
-        print("reducer server started")
         server.start()
         server.wait_for_termination()
 
@@ -86,11 +89,16 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
             ans=self.reduce()
             response.centroids[:]=ans
             response.status=1
+            random.seed(time.time())
+            random_number = random.randint(1, 2)
+            if random_number==1:
+                response.status=0
+            else:
+                response.status=1
 
         else:
-            response.centroids=["-1"]
-            response.centroids=0
-
+            response.status=0
+            
         self.partitioned_files=[]
         self.centroids=None
         self.shuflled_sorted={}     
@@ -101,6 +109,7 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
         
 
 if __name__=="__main__":
+
     received_args=sys.argv
     port_num=str(received_args[1])
     num_mappers=int(received_args[2])

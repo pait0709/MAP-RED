@@ -1,0 +1,1380 @@
+Starting Master
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Failure Occured,Retrying
+iteration 0
+Mapper Sucess
+Reducer Sucess
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 1
+Mapper Failure Occured,Retrying
+iteration 1
+Mapper Sucess
+Reducer Sucess
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Failure Occured,Retrying
+iteration 2
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 2
+Mapper Sucess
+Reducer Sucess
+iteration 3
+Mapper Failure Occured,Retrying
+iteration 3
+Mapper Failure Occured,Retrying
+iteration 3
+Mapper Failure Occured,Retrying
+iteration 3
+Mapper Failure Occured,Retrying
+iteration 3
+Mapper Sucess
+Reducer Sucess
+iteration 4
+Mapper Sucess
+Reducer Sucess
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Failure Occured,Retrying
+iteration 5
+Mapper Sucess
+Reducer Sucess
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Failure Occured,Retrying
+iteration 6
+Mapper Sucess
+Reducer Sucess
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Failure Occured,Retrying
+iteration 7
+Mapper Sucess
+Reducer Sucess
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Failure Occured,Retrying
+iteration 8
+Mapper Sucess
+Reducer Sucess
+iteration 9
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Sucess
+Reducer Failure Occured ,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Failure Occured,Retrying
+iteration 9
+Mapper Sucess
+Reducer Sucess

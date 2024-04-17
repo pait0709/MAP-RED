@@ -1,5 +1,6 @@
 
 import sys
+import time
 import map_red_pb2
 import map_red_pb2_grpc
 import grpc
@@ -17,7 +18,7 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
 
 
     def startserver(self,port):
-        server=grpc.server(futures.ThreadPoolExecutor(max_workers=100))
+        server=grpc.server(futures.ThreadPoolExecutor(max_workers=10000))
         map_red_pb2_grpc.add_KmeansServicer_to_server(self,server)
         server.add_insecure_port(f'localhost:{port}')
 
@@ -27,7 +28,7 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         self.dict.clear()
         for c in self.centroids:
             self.dict[(c[0],c[1])]=[]
-        with open('points.txt','r') as f:
+        with open('Input/points.txt','r') as f:
             buffer=f.readlines()
         if(indexes[0]==-1):
             return
@@ -53,7 +54,8 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
 
 
     def partition(self):
-        directory=f"M{(int(port_num)%50051)+1}/"
+        
+        directory=f"Mappers/M{(int(port_num)%50051)+1}/"
         file_prefix="partition"
         os.makedirs(directory,exist_ok=True)
         for i in range(1,self.num_reducers+1):
@@ -71,7 +73,6 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
 
  
     def MastertoMapper(self, request, context):
-        print("recieved")
         indexes=request.indexes
         centroids=request.centroids
 
@@ -82,17 +83,16 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         self.map(indexes)
         self.partition()    
             
-
-        # random_number = random.randint(1, 2)
-        # if random_number==1:
-        #     response.status=1
-        # else:
-        #     response.status=0
-        response.status=1
+        random.seed(time.time())
+        random_number = random.randint(1, 2)
+        if random_number==1:
+            response.status=0
+        else:
+            response.status=1
         return response
 
     def get_partition(self,reducer_number):
-        directory=f"M{(int(port_num)%50051)+1}/"
+        directory=f"Mappers/M{(int(port_num)%50051)+1}/"
         file_prefix=f"partition{reducer_number}.txt"
         with open(directory+file_prefix,'r') as f:
             temp_list=f.readlines()
@@ -107,12 +107,13 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         reducer_number=request.reducer_number
         response=map_red_pb2.ReducertoMapperResponse()
         response.output[:]=self.get_partition(reducer_number)
-        print("sex pakoda")
-        # random_number = random.randint(1, 2)
-        # if random_number==1:
-        #     response.status=1
-        # else:
-        #     response.status=0
+        random.seed(time.time())
+
+        random_number = random.randint(1, 2)
+        if random_number==1:
+            response.status=0
+        else:
+            response.status=1
         response.status=1
         return response
 
@@ -120,7 +121,7 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
 if __name__=="__main__":
     received_args=sys.argv
     port_num=received_args[1]
-    print("port num of server: "+port_num)
+    os.makedirs(f"Mappers/M{(int(port_num)%50051)+1}/",exist_ok=True)
     num_reducers=int(received_args[2])
     mapper=Mapper(port=port_num,num_reducers=num_reducers)
     mapper.startserver(port_num)

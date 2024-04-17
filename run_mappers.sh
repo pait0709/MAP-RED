@@ -13,3 +13,5 @@ arg2="$3"
 
 # Execute the Python script with the arguments
 python3 "$python_script" "$arg1" "$arg2"
+
+

@@ -26,6 +26,7 @@ message MastertoMapperResponse{
 
 message MastertoReducerRequest{
     int32 go_ahead=1;
+    repeated string centroids = 2;
 }
 
 message MastertoReducerResponse{
@@ -35,7 +36,6 @@ message MastertoReducerResponse{
 
 message ReducertoMapperRequest{
     int32 reducer_number=1;
-    repeated string centroids=2;
 }
 
 message ReducertoMapperResponse{

@@ -17,7 +17,7 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
 
 
     def startserver(self,port):
-        server=grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+        server=grpc.server(futures.ThreadPoolExecutor(max_workers=100))
         map_red_pb2_grpc.add_KmeansServicer_to_server(self,server)
         server.add_insecure_port(f'localhost:{port}')
 
@@ -50,10 +50,7 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
             self.dict[(par[0],par[1])].append([x1,y1])
     
         
-        
-        
 
-                
 
     def partition(self):
         directory=f"M{(int(port_num)%50051)+1}/"
@@ -100,7 +97,7 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         with open(directory+file_prefix,'r') as f:
             temp_list=f.readlines()
         for i in range(len(temp_list)):
-            temp_list[i]=temp_list.strip('\n')
+            temp_list[i]=temp_list[i].strip('\n')
         return temp_list
             
 
@@ -109,7 +106,8 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         """
         reducer_number=request.reducer_number
         response=map_red_pb2.ReducertoMapperResponse()
-        response.output=self.get_partition(reducer_number)
+        response.output[:]=self.get_partition(reducer_number)
+        print("sex pakoda")
         # random_number = random.randint(1, 2)
         # if random_number==1:
         #     response.status=1

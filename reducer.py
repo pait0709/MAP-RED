@@ -24,7 +24,9 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
                 if(len(response.output)!=0):
                     for x in response.output:
                         self.partitioned_files.append(x)
+                print("mapper call cool")
             else:
+                print("mapper call failed")
                 self.partitioned_files.append("-1")
     
     def shuffle_sort(self):
@@ -35,8 +37,8 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
             index=points[0]
             X1=points[1]
             Y1=points[2]
-            if (index not in self.shuffled_sorted.keys()):
-                self.shuffle_sorted[index]=[(X1,Y1)]
+            if (index not in self.shuflled_sorted.keys()):
+                self.shuflled_sorted[index]=[(X1,Y1)]
             else:
                 self.shuflled_sorted[index].append((X1,Y1))
         return True
@@ -52,13 +54,16 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
             avg_X1/=len(value)
             avg_Y1/=len(value)
             ans.append(f'{key} {avg_X1:.2f} {avg_Y1:.2f}')
+        with open(f"R{self.reducer_number}.txt",'w') as f:
+            for i in ans:
+                f.write(i+"\n")
         return ans
 
     def startserver(self,port):
-        server=grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+        server=grpc.server(futures.ThreadPoolExecutor(max_workers=100))
         map_red_pb2_grpc.add_KmeansServicer_to_server(self,server)
         server.add_insecure_port(f'localhost:{port}')
-        print("server started")
+        print("reducer server started")
         server.start()
         server.wait_for_termination()
 
@@ -70,7 +75,7 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
         self.centroids=float_centroid
         threads_mapper=[]
         for i in range(len(self.mappers)):
-            thread=threading.Thread(target=self.mapper_call,args=(self.mappers[i+1]))
+            thread=threading.Thread(target=self.mapper_call,args=[self.mappers[i+1]])
             thread.start()
             threads_mapper.append(thread)
         for t in threads_mapper:
@@ -78,12 +83,13 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
 
         flag=self.shuffle_sort()
         if flag:
-            response.output=self.reduce()
+            ans=self.reduce()
+            response.centroids[:]=ans
             response.status=1
 
         else:
-            response.output=["-1"]
-            response.status=0
+            response.centroids=["-1"]
+            response.centroids=0
 
         self.partitioned_files=[]
         self.centroids=None
@@ -96,10 +102,9 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
 
 if __name__=="__main__":
     received_args=sys.argv
-    port_num=received_args[1]
+    port_num=str(received_args[1])
     num_mappers=int(received_args[2])
     reducer_number=int(received_args[3])
-
     address_space_mappers=50051
     mappers={}
     #making an address book of all the mappers

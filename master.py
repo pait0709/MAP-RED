@@ -19,26 +19,17 @@ def mapper_call(port_address,shard_data,centroids):
         response=stub.MastertoMapper(request)
         mapper_output.append(response.status)
 
-
-
-
-
-
-
-
 def reducer_call(port_address,centroids):
     with grpc.insecure_channel(host+str(port_address)) as channel:
         str_centroids=[]
         for i in range(len(centroids)):
             str_centroids.append(str(centroids[i][0])+" "+str(centroids[i][1]))
+        print('inside reducer call')
         stub=map_red_pb2_grpc.KmeansStub(channel)
         request=map_red_pb2.MastertoReducerRequest(go_ahead=1,centroids=str_centroids)
         response=stub.MastertoReducer(request)
         reducer_output.append(response.status)
-        reducer_centroids.append(response.output)
-
-
-
+        reducer_centroids.append(response.centroids)
 
 if __name__=="__main__":
     #when master takes input
@@ -47,12 +38,8 @@ if __name__=="__main__":
     num_reducers=int(input("Num reducers: "))
     num_centroids=int(input("Num centroids: "))
     num_iters=int(input("Num iters: "))
-
     address_space_mappers=50051
-
     address_space_reducers=50151
-
-
     #initialising address of mappers
     mappers={}
     for i in range(num_mappers):
@@ -72,20 +59,16 @@ if __name__=="__main__":
         script_filename = "run_mappers.sh"
         subprocess.Popen(['./run_mappers.sh','mapper.py',str(mappers[i+1]),str(num_reducers)])
             
-    # for i in range(num_reducers):
-    #     port_num=str(reducers[i+1])
-    #     command=["python3","reducer.py",port_num,str(num_mappers),str(i+1)]
-    #     subprocess.run(command)
-    # print("waiting 10 secs run both the scripts")
-    # time.sleep(10)
+    for i in range(num_reducers):
+        port_num=str(reducers[i+1])
+        command=["./run_reducer.sh","reducer.py",port_num,str(num_mappers),str(i+1)]
+        subprocess.Popen(command)
+
     with open('points.txt','r') as f:
         l=f.readlines()
     for i in range(len(l)):
         l[i]=l[i].strip('\n')
         l[i]=[float(z) for z in l[i].split(',')]
-
-
-
     chunks=(len(l)//num_mappers)
     mapper_shards=[[] for i in range(num_mappers)]
     if(len(l)<num_mappers):
@@ -100,17 +83,17 @@ if __name__=="__main__":
     indices=np.random.choice(len(l),num_centroids,replace=False)
     l_copy=np.array(l)
     centorids=l_copy[indices].tolist()
+    with open('centroids.txt','w')as f:
+        for i in range(len(centorids)):
+            f.write(f"{i+1} {centorids[i][0]} {centorids[i][1]}\n")
+
     is_start=True
     j=0
     while j<num_iters:
 
         threads_mapper=[]
         threads_reducer=[]
-        if is_start:
-                centorids=centorids
-        else:
-            #need to write
-            pass
+        
         for i in range(num_mappers):
             thread=threading.Thread(target=mapper_call,args=(mappers[i+1],mapper_shards[i],centorids))
             thread.start()
@@ -126,43 +109,32 @@ if __name__=="__main__":
             for t in threads_reducer:
                 t.join()
             if(sum(reducer_output)==num_reducers):
-                #do something
-                #check convergence
+                #implementing master side
+                
+                for p in reducer_centroids:
+                    for jl in p:
+                        points=jl.split()
+                        index=int(points[0])
+                        X1=float(points[1])
+                        Y1=float(points[2])
+                        centorids[index]=[X1,Y1]
+                print(f"Centroids for iteration {j+1}:")
+                with open('centroids.txt','w')as f:
+                    for i in range(len(centorids)):
+                        f.write(f"{i+1} {centorids[i][0]} {centorids[i][1]}\n")
+                        print(f"{i+1} {centorids[i][0]} {centorids[i][1]}\n")
                 j+=1
+            else:
+                j+=1
+                print("Reducer Failure, Retrying")       
             reducer_output=[]
             reducer_centroids=[]
             mapper_output=[]
-            j+=1
-                
         else:
-            print("NO NIGGA")
             j+=1
+            print("Mapper Failure Retrying")
             reducer_output=[]
             mapper_output=[]
             reducer_centroids=[]
             continue
                     
-
-                
-
-
-
-        
-
-
-
-
-#call the mappers in a thread
-
-
-#when call of mappers is received
-
-#detect failure
-
-#call reducers
-
-#detect failure
-
-#if failure dont decrease iter
-
-#rinse and repeat till conversion or iterations

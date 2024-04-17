@@ -26,15 +26,16 @@ def mapper_call(port_address,shard_data,centroids):
 
 
 
-def reducer_call(port_address):
-    print("HI")
-    channel=grpc.insecure_channel(host+str(port_address))
-
-    stub=map_red_pb2_grpc.KmeansStub(channel)
-    request=map_red_pb2.MastertoReducerRequest(go_ahead=1)
-    response=stub.MastertoReducer(request)
-    reducer_output.append(response.status)
-    reducer_centroids.append(response.output)
+def reducer_call(port_address,centroids):
+    with grpc.insecure_channel(host+str(port_address)) as channel:
+        str_centroids=[]
+        for i in range(len(centroids)):
+            str_centroids.append(str(centroids[i][0])+" "+str(centroids[i][1]))
+        stub=map_red_pb2_grpc.KmeansStub(channel)
+        request=map_red_pb2.MastertoReducerRequest(go_ahead=1,centroids=str_centroids)
+        response=stub.MastertoReducer(request)
+        reducer_output.append(response.status)
+        reducer_centroids.append(response.output)
 
 
 
@@ -118,16 +119,16 @@ if __name__=="__main__":
             t.join()
         if sum(mapper_output)==num_mappers:
             print("NIGGA")
-            # for i in range(num_reducers):
-            #     thread=threading.Thread(target=reducer_call,args=(reducers[i+1]))
-            #     thread.start()
-            #     threads_reducer.append(thread)
-            # for t in threads_reducer:
-            #     t.join()
-            # if(sum(reducer_output)==num_reducers):
-            #     #do something
-            #     #check convergence
-            #     j+=1
+            for i in range(num_reducers):
+                thread=threading.Thread(target=reducer_call,args=(reducers[i+1],centorids))
+                thread.start()
+                threads_reducer.append(thread)
+            for t in threads_reducer:
+                t.join()
+            if(sum(reducer_output)==num_reducers):
+                #do something
+                #check convergence
+                j+=1
             reducer_output=[]
             reducer_centroids=[]
             mapper_output=[]

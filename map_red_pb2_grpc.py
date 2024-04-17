@@ -6,7 +6,9 @@ import map_red_pb2 as map__red__pb2
 
 
 class KmeansStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. map_red.proto
+
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -32,7 +34,9 @@ class KmeansStub(object):
 
 
 class KmeansServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. map_red.proto
+
+    """
 
     def MastertoMapper(self, request, context):
         """master assigns indexes and gives centroids recieves status, Mapper is server, master is client
@@ -81,7 +85,9 @@ def add_KmeansServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Kmeans(object):
-    """Missing associated documentation comment in .proto file."""
+    """python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. map_red.proto
+
+    """
 
     @staticmethod
     def MastertoMapper(request,

@@ -3,14 +3,17 @@ import sys
 import map_red_pb2
 import map_red_pb2_grpc
 import grpc
+import os
 import numpy as np
 from concurrent import futures
+from pathlib import Path
 import random
 class Mapper(map_red_pb2_grpc.KmeansServicer):
     def __init__(self,port,num_reducers):
         self.port=port
         self.num_reducers=num_reducers
         self.dict=dict()
+        self.centroids=None
 
 
     def startserver(self,port):
@@ -20,9 +23,9 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
 
         server.start()
         server.wait_for_termination()
-    def map(self,indexes,centroids):
+    def map(self,indexes):
         self.dict.clear()
-        for c in centroids:
+        for c in self.centroids:
             self.dict[(c[0],c[1])]=[]
         with open('points.txt','r') as f:
             buffer=f.readlines()
@@ -38,30 +41,49 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
             x1,y1=p[0],p[1]
             dis=1e18
             par=[-1,-1]
-            for c in centroids:
+            for c in self.centroids:
                 x2,y2=c[0],c[1]
                 temp_dis=((x1-x2)**2)+((y1-y2)**2)
                 if(temp_dis<dis):
                     dis=temp_dis
                     par=[x2,y2]
             self.dict[(par[0],par[1])].append([x1,y1])
+    
+        
         
         
 
                 
 
-    def partition(self,indexes):
-        if self.dict():
+    def partition(self):
+        directory=f"M{(int(port_num)%50051)+1}/"
+        file_prefix="partition"
+        os.makedirs(directory,exist_ok=True)
+        for i in range(1,self.num_reducers+1):
+            with open(f"{directory+file_prefix}{i}.txt",'w') as f:
+                for k in self.dict.keys():
+                    ind=self.centroids.index([k[0],k[1]])
+                    if((ind%num_reducers)+1==i):
+                        for v in self.dict[k]:
+                            f.write(f"{ind} {v[0]} {v[1]}\n")
+        
+        
+                    
+                        
+
+
+ 
     def MastertoMapper(self, request, context):
         print("recieved")
         indexes=request.indexes
         centroids=request.centroids
-        # self.map(indexes,centroids)
+
         # self.partition()
         response=map_red_pb2.MastertoMapperResponse()
         float_centroid=[[float(i.split()[0]),float(i.split()[1])] for i in centroids]
-        
-            
+        self.centroids=float_centroid
+        self.map(indexes)
+        self.partition()    
             
 
         # random_number = random.randint(1, 2)
@@ -73,7 +95,15 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         return response
 
     def get_partition(self,reducer_number):
-        pass
+        directory=f"M{(int(port_num)%50051)+1}/"
+        file_prefix=f"partition{reducer_number}.txt"
+        with open(directory+file_prefix,'r') as f:
+            temp_list=f.readlines()
+        for i in range(len(temp_list)):
+            temp_list[i]=temp_list.strip('\n')
+        return temp_list
+            
+
     def ReducertoMapper(self, request, context):
         """reducer requests and also sends its reducer number the partitioned files recieves files and status, Reducer is client, mapper is server
         """

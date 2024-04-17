@@ -4,11 +4,55 @@ import map_red_pb2
 import map_red_pb2_grpc
 from concurrent import futures
 import sys
+import threading
 
 class Reducer(map_red_pb2_grpc.KmeansServicer):
     def __init__(self, mappers,reducer_number):
         self.mappers=mappers
         self.reducer_number=reducer_number
+        self.partitioned_files=[]
+        self.centroids=None
+        self.shuflled_sorted={}
+
+    def mapper_call(self,port):
+        host='localhost:'
+        with grpc.insecure_channel(host+str(port)) as channel:
+            stub=map_red_pb2_grpc.KmeansStub(channel)
+            request=map_red_pb2.ReducertoMapperRequest(reducer_number=self.reducer_number)
+            response=stub.ReducertoMapper(request)
+            if(response.status==1): 
+                if(len(response.output)!=0):
+                    for x in response.output:
+                        self.partitioned_files.append(x)
+            else:
+                self.partitioned_files.append("-1")
+    
+    def shuffle_sort(self):
+        for x in self.partitioned_files:
+            if (x=="-1"):
+                return False
+            points=x.split()
+            index=points[0]
+            X1=points[1]
+            Y1=points[2]
+            if (index not in self.shuffled_sorted.keys()):
+                self.shuffle_sorted[index]=[(X1,Y1)]
+            else:
+                self.shuflled_sorted[index].append((X1,Y1))
+        return True
+    
+    def reduce(self):
+        ans=[]
+        for key, value in self.shuflled_sorted.items():
+            avg_X1=0
+            avg_Y1=0
+            for X1,Y1 in value:
+                avg_X1+=float(X1)
+                avg_Y1+=float(Y1)
+            avg_X1/=len(value)
+            avg_Y1/=len(value)
+            ans.append(f'{key} {avg_X1:.2f} {avg_Y1:.2f}')
+        return ans
 
     def startserver(self,port):
         server=grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -19,11 +63,36 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
         server.wait_for_termination()
 
     def MastertoReducer(self, request, context):
-        """master gives the go-ahead to reduce and master recieves status and centroids, Reducer is server, master is client
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        response=map_red_pb2.MastertoReducerResponse()
+        go_ahead=request.go_ahead
+        centroids=request.centroids
+        float_centroid=[[float(i.split()[0]),float(i.split()[1])] for i in centroids]
+        self.centroids=float_centroid
+        threads_mapper=[]
+        for i in range(len(self.mappers)):
+            thread=threading.Thread(target=self.mapper_call,args=(self.mappers[i+1]))
+            thread.start()
+            threads_mapper.append(thread)
+        for t in threads_mapper:
+            t.join()
+
+        flag=self.shuffle_sort()
+        if flag:
+            response.output=self.reduce()
+            response.status=1
+
+        else:
+            response.output=["-1"]
+            response.status=0
+
+        self.partitioned_files=[]
+        self.centroids=None
+        self.shuflled_sorted={}     
+        return response
+        
+
+
+        
 
 if __name__=="__main__":
     received_args=sys.argv

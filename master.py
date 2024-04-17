@@ -1,3 +1,4 @@
+from tabnanny import check
 import time
 import subprocess
 import numpy as np
@@ -36,7 +37,11 @@ def reducer_call(port_address,centroids):
             reducer_centroids.append(response.centroids)
         except grpc.RpcError as e:
             pass
-
+def check_for_convergence(l1,l2):
+    for i in range(len(l1)):
+        if not (l1[i][0]==l2[i][0] and l2[i][1]==l1[i][1]):
+            return False
+    return True
 if __name__=="__main__":
     os.makedirs('Mappers',exist_ok=True)
     os.makedirs('Reducers',exist_ok=True)
@@ -74,6 +79,7 @@ if __name__=="__main__":
 
     with open('Input/points.txt','r') as f:
         l=f.readlines()
+        
     for i in range(len(l)):
         l[i]=l[i].strip('\n')
         l[i]=[float(z) for z in l[i].split(',')]
@@ -125,7 +131,7 @@ if __name__=="__main__":
                 with open('dump.txt','a') as f:
                     f.write("Reducer Sucess\n") 
                 #implementing master side
-                
+                temp_centroids=[0 for i in range(len(centorids))]
                 for p in reducer_centroids:
                     for jl in p:
                         points=jl.split()
@@ -133,15 +139,24 @@ if __name__=="__main__":
                         X1=float(points[1])
                         Y1=float(points[2])
                         try:
-                            centorids[index]=[X1,Y1]
+                            temp_centroids[index]=[X1,Y1]
                         except:
                             continue
+                
                #print(f"Centroids for iteration {j+1}:")
                 with open('centroids.txt','w')as f:
                     for i in range(len(centorids)):
-                        f.write(f"{i+1} {centorids[i][0]} {centorids[i][1]}\n")
-                        print(f"{i+1} {centorids[i][0]} {centorids[i][1]}\n")
-                j+=1
+                        try:
+                            f.write(f"{i+1} {temp_centroids[i][0]} {temp_centroids[i][1]}\n")
+                            print(f"{i+1} {temp_centroids[i][0]} {temp_centroids[i][1]}\n")
+                        except:
+                            print('ERROR')
+                            print(temp_centroids)
+                if check_for_convergence(temp_centroids,centorids):
+                    break
+                else:
+                    centorids=temp_centroids
+                    j+=1
             else:
                 #print("Reducer Failure, Retrying")   
                 with open('dump.txt','a') as f: 

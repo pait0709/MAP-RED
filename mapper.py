@@ -83,8 +83,7 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         self.map(indexes)
         self.partition()    
             
-        random.seed(time.time())
-        random_number = random.randint(1, 2)
+        random_number = random.randint(1, 100)
         if random_number==1:
             response.status=0
         else:
@@ -107,14 +106,12 @@ class Mapper(map_red_pb2_grpc.KmeansServicer):
         reducer_number=request.reducer_number
         response=map_red_pb2.ReducertoMapperResponse()
         response.output[:]=self.get_partition(reducer_number)
-        random.seed(time.time())
 
-        random_number = random.randint(1, 2)
+        random_number = random.randint(1, 100)
         if random_number==1:
             response.status=0
         else:
             response.status=1
-        response.status=1
         return response
 
 

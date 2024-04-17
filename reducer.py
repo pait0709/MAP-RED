@@ -89,8 +89,7 @@ class Reducer(map_red_pb2_grpc.KmeansServicer):
             ans=self.reduce()
             response.centroids[:]=ans
             response.status=1
-            random.seed(time.time())
-            random_number = random.randint(1, 2)
+            random_number = random.randint(1,100)
             if random_number==1:
                 response.status=0
             else:
